@@ -1,8 +1,13 @@
 package tntra.io.pss_server.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TransactionMessage {
 
     private String transactionId;
@@ -11,12 +16,10 @@ public class TransactionMessage {
     private String responseCode;
     private String destination;
 
-    public TransactionMessage(String transactionId, String panNo, String amount, String responseCode, String destination) {
+    public TransactionMessage(String transactionId, String panNo, String amount) {
         this.transactionId = transactionId;
         this.panNo = panNo;
         this.amount = amount;
-        this.responseCode = responseCode;
-        this.destination = destination;
     }
 
 }
